@@ -24,20 +24,11 @@ function cambiarImagen() {
 // Función para mostrar la sección seleccionada
 function mostrarSeccion(seccionId) {
     const secciones = document.querySelectorAll('.seccion');
-    secciones.forEach((function (el) {
+    secciones.forEach((seccion) => {
         el.style.display = 'none'; // Ocultar todas las secciones
     });
     document.getElementById(seccionId).style.display = 'block'; // Mostrar la sección seleccionada
 }
-function mostrarSeccion(seccionId) {
-    alert("Función mostrarSeccion llamada con el id: " + seccionId);
-    const secciones = document.querySelectorAll('.seccion');
-    secciones.forEach((seccion) => {
-        seccion.style.display = 'none';
-    });
-    document.getElementById(seccionId).style.display = 'block';
-}
-
 
 // Función para añadir un producto al carrito
 function agregarAlCarrito() {

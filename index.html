@@ -8,35 +8,28 @@
 </head>
 <body>
     <header>
+        <img src="images/logo.png" alt="Logo de la Tienda" class="logo"> <!-- Añade tu logo aquí -->
         <h1>CUSTOM LOOK</h1>
         <nav>
             <ul>
-                <li><a href="#inicio" onclick="mostrarSeccion('inicio')">Inicio</a></li>
-                <li><a href="#productos" onclick="mostrarSeccion('productos')">Productos</a></li>
-                <li><a href="#carrito" onclick="mostrarSeccion('carrito')">Carrito</a></li>
-                <li><a href="#contacto" onclick="mostrarSeccion('contacto')">Contacto</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#carrito">Carrito</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <!-- Sección de inicio -->
-        <section id="inicio" class="seccion visible">
-            <h2>Inicio</h2>
-            <p>Bienvenido a nuestra tienda de ropa personalizable.</p>
-        </section>
-
-        <!-- Sección de productos -->
         <section id="productos" class="seccion">
             <h2>Elige tu prenda y personalízala</h2>
             <!-- Producto 1 -->
             <div class="product">
-                <img src="images/camiseta.jpg" alt="Camiseta básica">
+                <img id="product-image" src="images/camiseta_blanco.jpg" alt="Camiseta básica">
                 <h3>Camiseta Personalizable</h3>
                 <p>Precio: $15.99</p>
 
                 <label for="color">Color:</label>
-                <select id="color">
+                <select id="color" onchange="cambiarImagen()">
                     <option value="blanco">Blanco</option>
                     <option value="negro">Negro</option>
                     <option value="rojo">Rojo</option>
@@ -57,18 +50,15 @@
             </div>
         </section>
 
-        <!-- Sección de carrito -->
         <section id="carrito" class="seccion">
-            <h2>Tu carrito</h2>
-            <ul id="cart-items"></ul>
-            <p id="total-price">Total: $0.00</p>
-            <button id="checkout">Finalizar compra</button>
+            <h2>Tu Carrito</h2>
+            <!-- Contenido del carrito -->
+            <p>Aquí aparecerán los productos que añadas.</p>
         </section>
 
-        <!-- Sección de contacto -->
         <section id="contacto" class="seccion">
             <h2>Contacto</h2>
-            <p>Para más información, contáctanos en nuestro correo: contacto@tiendaderopa.com</p>
+            <p>Puedes contactarnos a través del siguiente correo: contacto@tienda.com</p>
         </section>
     </main>
 

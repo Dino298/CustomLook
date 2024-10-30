@@ -12,10 +12,10 @@
         <h1>Tienda de Ropa Personalizable</h1>
         <nav>
             <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#productos">Productos</a></li>
-                <li><a href="#carrito">Carrito</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="javascript:void(0);" onclick="mostrarSeccion('inicio')">Inicio</a></li>
+                <li><a href="javascript:void(0);" onclick="mostrarSeccion('productos')">Productos</a></li>
+                <li><a href="javascript:void(0);" onclick="mostrarSeccion('carrito')">Carrito</a></li>
+                <li><a href="javascript:void(0);" onclick="mostrarSeccion('contacto')">Contacto</a></li>
             </ul>
         </nav>
     </header>
@@ -26,7 +26,7 @@
             <p>Encuentra las mejores camisetas personalizables a tu gusto.</p>
         </section>
 
-        <section id="productos" class="seccion">
+        <section id="productos" class="seccion" style="display: none;">
             <h2>Elige tu prenda y personalízala</h2>
             <!-- Producto 1 -->
             <div class="product">
@@ -56,13 +56,13 @@
             </div>
         </section>
 
-        <section id="carrito" class="seccion">
+        <section id="carrito" class="seccion" style="display: none;">
             <h2>Tu Carrito</h2>
             <!-- Contenido del carrito -->
             <p>Aquí aparecerán los productos que añadas.</p>
         </section>
 
-        <section id="contacto" class="seccion">
+        <section id="contacto" class="seccion" style="display: none;">
             <h2>Contacto</h2>
             <p>Puedes contactarnos a través del siguiente correo: contacto@tienda.com</p>
         </section>

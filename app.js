@@ -22,13 +22,22 @@ function cambiarImagen() {
 }
 
 // Función para mostrar la sección seleccionada
-function mostrarSeccion(seccion) {
+function mostrarSeccion(seccionId) {
     const secciones = document.querySelectorAll('.seccion');
-    secciones.forEach(function (el) {
+    secciones.forEach((function (el) {
         el.style.display = 'none'; // Ocultar todas las secciones
     });
-    document.getElementById(seccion).style.display = 'block'; // Mostrar la sección seleccionada
+    document.getElementById(seccionId).style.display = 'block'; // Mostrar la sección seleccionada
 }
+function mostrarSeccion(seccionId) {
+    alert("Función mostrarSeccion llamada con el id: " + seccionId);
+    const secciones = document.querySelectorAll('.seccion');
+    secciones.forEach((seccion) => {
+        seccion.style.display = 'none';
+    });
+    document.getElementById(seccionId).style.display = 'block';
+}
+
 
 // Función para añadir un producto al carrito
 function agregarAlCarrito() {

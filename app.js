@@ -40,7 +40,7 @@ function agregarAlCarrito() {
         color: color,
         talla: talla,
         cantidad: cantidad,
-        precio: 70.000
+        precio: 70.000 COP
     };
 
     carrito.push(producto);

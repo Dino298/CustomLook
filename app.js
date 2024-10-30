@@ -8,16 +8,16 @@ function cambiarImagen() {
     
     switch (color) {
         case 'blanco':
-            productImage.src = 'images/camiseta_blanco.jpg';
+            productImage.src = 'https://shirtup.com/cdn/shop/files/HOVER_03981_-_Comfort_Unisex_T-Shirt.png?v=1712664917&width=360';
             break;
         case 'negro':
-            productImage.src = 'images/camiseta_negro.jpg';
+            productImage.src = 'https://shirtup.com/cdn/shop/files/HOVER_11150_-_Basic_Men_s_V-neck_T-shirt.png?v=1711702508&width=360';
             break;
-        case 'rojo':
-            productImage.src = 'images/camiseta_rojo.jpg';
+        case 'amarillo':
+            productImage.src = 'https://shirtup.com/cdn/shop/files/HOVER_03806_-_Boxy_Men_s_T-shirt.png?v=1728546319&width=360';
             break;
         default:
-            productImage.src = 'images/camiseta_blanco.jpg'; // valor por defecto
+            productImage.src = 'https://shirtup.com/cdn/shop/files/HOVER_03981_-_Comfort_Unisex_T-Shirt.png?v=1712664917&width=360'; // valor por defecto
     }
 }
 

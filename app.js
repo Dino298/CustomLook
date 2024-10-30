@@ -1,3 +1,11 @@
+function mostrarSeccion(seccion) {
+    const secciones = document.querySelectorAll('.seccion');
+    secciones.forEach(function (el) {
+        el.style.display = 'none'; // Ocultar todas las secciones
+    });
+    document.getElementById(seccion).style.display = 'block'; // Mostrar la sección seleccionada
+}
+
 function cambiarImagen() {
     const color = document.getElementById('color').value;
     const productImage = document.getElementById('product-image');
@@ -17,3 +25,8 @@ function cambiarImagen() {
             productImage.src = 'images/camiseta_blanco.jpg'; // valor por defecto
     }
 }
+
+// Muestra la sección de inicio al cargar la página
+window.onload = function() {
+    mostrarSeccion('inicio');
+};

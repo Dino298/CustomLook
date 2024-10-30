@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Ropa Personalizable</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a la Tienda de Ropa Personalizable</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio" onclick="mostrarSeccion('inicio')">Inicio</a></li>
+                <li><a href="#productos" onclick="mostrarSeccion('productos')">Productos</a></li>
+                <li><a href="#carrito" onclick="mostrarSeccion('carrito')">Carrito</a></li>
+                <li><a href="#contacto" onclick="mostrarSeccion('contacto')">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sección de inicio -->
+        <section id="inicio" class="seccion visible">
+            <h2>Inicio</h2>
+            <p>Bienvenido a nuestra tienda de ropa personalizable.</p>
+        </section>
+
+        <!-- Sección de productos -->
+        <section id="productos" class="seccion">
+            <h2>Elige tu prenda y personalízala</h2>
+            <!-- Producto 1 -->
+            <div class="product">
+                <img src="images/camiseta.jpg" alt="Camiseta básica">
+                <h3>Camiseta Personalizable</h3>
+                <p>Precio: $15.99</p>
+
+                <label for="color">Color:</label>
+                <select id="color">
+                    <option value="blanco">Blanco</option>
+                    <option value="negro">Negro</option>
+                    <option value="rojo">Rojo</option>
+                </select>
+
+                <label for="talla">Talla:</label>
+                <select id="talla">
+                    <option value="s">S</option>
+                    <option value="m">M</option>
+                    <option value="l">L</option>
+                </select>
+
+                <!-- Campo de cantidad -->
+                <label for="cantidad">Cantidad:</label>
+                <input type="number" id="cantidad" value="1" min="1">
+
+                <button class="add-to-cart">Añadir al carrito</button>
+            </div>
+        </section>
+
+        <!-- Sección de carrito -->
+        <section id="carrito" class="seccion">
+            <h2>Tu carrito</h2>
+            <ul id="cart-items"></ul>
+            <p id="total-price">Total: $0.00</p>
+            <button id="checkout">Finalizar compra</button>
+        </section>
+
+        <!-- Sección de contacto -->
+        <section id="contacto" class="seccion">
+            <h2>Contacto</h2>
+            <p>Para más información, contáctanos en nuestro correo: contacto@tiendaderopa.com</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tienda de Ropa Personalizable. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

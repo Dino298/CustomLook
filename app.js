@@ -40,7 +40,7 @@ function agregarAlCarrito() {
         color: color,
         talla: talla,
         cantidad: cantidad,
-        precio: 15.99
+        precio: 70.000
     };
 
     carrito.push(producto);

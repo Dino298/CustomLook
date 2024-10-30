@@ -1,3 +1,21 @@
+// Verifica que el archivo JavaScript se cargue correctamente
+alert("app.js cargado correctamente");
+
+// Función para mostrar la sección seleccionada y ocultar las demás
+function mostrarSeccion(seccionId) {
+    alert("Función mostrarSeccion llamada con el id: " + seccionId);
+    const secciones = document.querySelectorAll('.seccion');
+    secciones.forEach((seccion) => {
+        seccion.style.display = 'none';
+    });
+    document.getElementById(seccionId).style.display = 'block';
+}
+
+// Agregar eventos a los enlaces de navegación
+document.getElementById('inicio-link').addEventListener('click', () => mostrarSeccion('inicio'));
+document.getElementById('productos-link').addEventListener('click', () => mostrarSeccion('productos'));
+document.getElementById('carrito-link').addEventListener('click', () => mostrarSeccion('carrito'));
+document.getElementById('contacto-link').addEventListener('click', () => mostrarSeccion('contacto'));
 // Array para almacenar los productos en el carrito
 let carrito = [];
 
@@ -19,16 +37,6 @@ function cambiarImagen() {
         default:
             productImage.src = 'https://shirtup.com/cdn/shop/files/HOVER_03981_-_Comfort_Unisex_T-Shirt.png?v=1712664917&width=360'; // valor por defecto
     }
-}
-
-// Función para mostrar la sección seleccionada
-function mostrarSeccion(seccionId) {
-    const secciones = document.querySelectorAll('.seccion');
-    secciones.forEach((seccion) => {
-        el.style.display = 'none'; // Ocultar todas las secciones
-    });
-    document.getElementById(seccionId).style.display = 'block'; // Mostrar la sección seleccionada
-}
 
 // Función para añadir un producto al carrito
 function agregarAlCarrito() {

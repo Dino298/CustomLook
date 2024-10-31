@@ -2,20 +2,12 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
 }
 
 header {
     background: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-}
-
-.logo {
-    max-width: 200px; /* Ajusta el tamaño según sea necesario */
-    height: auto;
-    margin-bottom: 10px; /* Espacio entre el logo y el título */
+    color: white;
+    padding: 10px 20px;
 }
 
 nav ul {
@@ -25,35 +17,27 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin: 0 15px;
+    margin-right: 20px;
 }
 
-nav ul li a {
-    color: #fff;
+nav a {
+    color: white;
     text-decoration: none;
 }
 
-.seccion {
+section {
     padding: 20px;
 }
 
-.product {
-    background: #fff;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.product img {
-    max-width: 100%;
+.producto {
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    padding: 10px;
 }
 
 footer {
+    background: #333;
+    color: white;
     text-align: center;
     padding: 10px 0;
-    background: #333;
-    color: #fff;
-    position: relative;
-    bottom: 0;
-    width: 100%;
 }

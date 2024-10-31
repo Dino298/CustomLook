@@ -1,9 +1,5 @@
-// Verifica que el archivo JavaScript se cargue correctamente
-alert("app.js cargado correctamente");
-
 // Función para mostrar la sección seleccionada y ocultar las demás
 function mostrarSeccion(seccionId) {
-    alert("Función mostrarSeccion llamada con el id: " + seccionId);
     const secciones = document.querySelectorAll('.seccion');
     secciones.forEach((seccion) => {
         seccion.style.display = 'none';
@@ -11,72 +7,57 @@ function mostrarSeccion(seccionId) {
     document.getElementById(seccionId).style.display = 'block';
 }
 
-// Agregar eventos a los enlaces de navegación
-document.getElementById('inicio-link').addEventListener('click', () => mostrarSeccion('inicio'));
-document.getElementById('productos-link').addEventListener('click', () => mostrarSeccion('productos'));
-document.getElementById('carrito-link').addEventListener('click', () => mostrarSeccion('carrito'));
-document.getElementById('contacto-link').addEventListener('click', () => mostrarSeccion('contacto'));
-// Array para almacenar los productos en el carrito
-let carrito = [];
-
 // Función para cambiar la imagen según el color seleccionado
 function cambiarImagen() {
     const color = document.getElementById('color').value;
     const productImage = document.getElementById('product-image');
-    
+
     switch (color) {
         case 'blanco':
-            productImage.src = 'https://shirtup.com/cdn/shop/files/HOVER_03981_-_Comfort_Unisex_T-Shirt.png?v=1712664917&width=360';
+            productImage.src = 'https://example.com/path-to-your-image/camiseta_blanco.jpg';
             break;
         case 'negro':
-            productImage.src = 'https://shirtup.com/cdn/shop/files/HOVER_11150_-_Basic_Men_s_V-neck_T-shirt.png?v=1711702508&width=360';
+            productImage.src = 'https://example.com/path-to-your-image/camiseta_negro.jpg';
             break;
-        case 'amarillo':
-            productImage.src = 'https://shirtup.com/cdn/shop/files/HOVER_03806_-_Boxy_Men_s_T-shirt.png?v=1728546319&width=360';
+        case 'beige':
+            productImage.src = 'https://example.com/path-to-your-image/camiseta_beige.jpg';
             break;
         default:
-            productImage.src = 'https://shirtup.com/cdn/shop/files/HOVER_03981_-_Comfort_Unisex_T-Shirt.png?v=1712664917&width=360'; // valor por defecto
+            productImage.src = 'https://example.com/path-to-your-image/camiseta_blanco.jpg';
     }
+}
 
-// Función para añadir un producto al carrito
+// Función para cargar y mostrar una imagen personalizada
+function cargarImagen(event) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+        const productImage = document.getElementById('product-image');
+        productImage.src = e.target.result;
+    };
+
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+}
+
+// Función para agregar el producto al carrito
 function agregarAlCarrito() {
     const color = document.getElementById('color').value;
     const talla = document.getElementById('talla').value;
     const cantidad = parseInt(document.getElementById('cantidad').value);
-    const producto = {
-        nombre: 'Camiseta Personalizable',
-        color: color,
-        talla: talla,
-        cantidad: cantidad,
-        precio: 70.000 COP
-    };
 
-    carrito.push(producto);
-    mostrarCarrito();
-}
-
-// Función para mostrar los productos en el carrito
-function mostrarCarrito() {
     const carritoContenido = document.getElementById('carrito-contenido');
-    carritoContenido.innerHTML = ''; // Limpiar el contenido previo
-
-    if (carrito.length === 0) {
-        carritoContenido.innerHTML = '<p>Tu carrito está vacío.</p>';
-    } else {
-        carrito.forEach((producto, index) => {
-            carritoContenido.innerHTML += `
-                <div>
-                    <p>${producto.cantidad} x ${producto.nombre} - Color: ${producto.color}, Talla: ${producto.talla} - Precio: $${producto.precio}</p>
-                </div>
-            `;
-        });
-    }
+    const item = document.createElement('p');
+    item.textContent = `Camiseta - Color: ${color}, Talla: ${talla}, Cantidad: ${cantidad}`;
+    carritoContenido.appendChild(item);
 }
 
-// Muestra la sección de inicio al cargar la página
-window.onload = function() {
-    mostrarSeccion('inicio');
-};
-
-// Evento para añadir al carrito
-document.querySelector('.add-to-cart').addEventListener('click', agregarAlCarrito);
+// Eventos para la navegación de secciones
+document.getElementById('inicio-link').addEventListener('click', () => mostrarSeccion('inicio'));
+document.getElementById('productos-link').addEventListener('click', () => mostrarSeccion('productos'));
+document.getElementById('carrito-link').addEventListener('click', () => mostrarSeccion('carrito'));
+document.getElementById('contacto-link').addEventListener('click', () => mostrarSeccion('contacto'));
+document.getElementById('registro-link').addEventListener('click', () => mostrarSeccion('registro'));
+document.getElementById('login-link').addEventListener('click', () => mostrarSeccion('login'));

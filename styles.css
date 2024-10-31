@@ -1,3 +1,10 @@
+.logo {
+    width: 150px;  /* Ajusta el tamaño según sea necesario */
+    height: auto;  /* Mantiene la proporción de la imagen */
+    display: block; /* Para centrar la imagen si es necesario */
+    margin: 0 auto; /* Centra la imagen si el contenedor es más ancho */
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -41,9 +48,4 @@ footer {
     text-align: center;
     padding: 10px 0;
 }
-.logo {
-    width: 100%;  /* Ajusta el tamaño según sea necesario */
-    height: auto;  /* Mantiene la proporción de la imagen */
-    display: block; /* Para centrar la imagen si es necesario */
-    margin: 0 auto; /* Centra la imagen si el contenedor es más ancho */
-}
+

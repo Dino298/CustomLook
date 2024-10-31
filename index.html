@@ -3,38 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>𝗖𝗨𝗦𝗧𝗢𝗠 𝗟𝗢𝗢𝗞</title>
+    <title>Custom Look - Tienda Online de Ropa Personalizable</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <img src="https://tse3.mm.bing.net/th?id=OIG2.FvBWiQQdGS63La0EGksK&pid=ImgGn" alt="Logo de la Tienda" class="logo"> <!-- Añade tu logo aquí -->
-        <h1>𝗖𝗨𝗦𝗧𝗢𝗠 𝗟𝗢𝗢𝗞</h1>
+        <img src="https://example.com/path-to-your-image/logo.png" alt="Logo de Custom Look" class="logo">
+        <h1>Custom Look</h1>
         <nav>
             <ul>
                 <li><a href="#" id="inicio-link">Inicio</a></li>
                 <li><a href="#" id="productos-link">Productos</a></li>
                 <li><a href="#" id="carrito-link">Carrito</a></li>
                 <li><a href="#" id="contacto-link">Contacto</a></li>
-
+                <li><a href="#" id="registro-link">Registro</a></li>
+                <li><a href="#" id="login-link">Iniciar sesión</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="inicio" class="seccion">
-            <h2>Bienvenido a nuestra tienda</h2>
+            <h2>Bienvenido a Custom Look</h2>
             <p>Encuentra las mejores camisetas personalizables a tu gusto.</p>
-            <p><strong>Misión: En Custom Look, nos dedicamos a brindar a nuestros clientes la libertad de expresar su estilo único a través de ropa personalizable de alta calidad, combinando innovación y diseño para crear prendas que reflejen la individualidad y creatividad de cada persona.</strong></p>
-            
-            <p><strong>Visión: Ser la marca líder mundial en ropa personalizable, reconocida por nuestra excelencia en calidad, innovación en diseño, y compromiso con la sostenibilidad, empoderando a nuestros clientes para que puedan vestirse de manera auténtica y consciente.</strong></p>
+            <h3>Misión</h3>
+            <p>En Custom Look, nos dedicamos a brindar a nuestros clientes la libertad de expresar su estilo único a través de ropa personalizable de alta calidad, combinando innovación y diseño para crear prendas que reflejen la individualidad y creatividad de cada persona.</p>
+            <h3>Visión</h3>
+            <p>Ser la marca líder mundial en ropa personalizable, reconocida por nuestra excelencia en calidad, innovación en diseño, y compromiso con la sostenibilidad, empoderando a nuestros clientes para que puedan vestirse de manera auténtica y consciente.</p>
         </section>
 
         <section id="productos" class="seccion" style="display: none;">
             <h2>Elige tu prenda y personalízala</h2>
-            <!-- Producto 1 -->
             <div class="product">
-                <img id="product-image" src="https://shirtup.com/cdn/shop/files/HOVER_03981_-_Comfort_Unisex_T-Shirt.png?v=1712664917&width=360" alt="Camiseta básica">
+                <img id="product-image" src="https://example.com/path-to-your-image/camiseta_blanco.jpg" alt="Camiseta básica">
                 <h3>Camiseta Personalizable</h3>
                 <p>Precio: $70.000 COP</p>
 
@@ -42,7 +43,7 @@
                 <select id="color" onchange="cambiarImagen()">
                     <option value="blanco">Blanco</option>
                     <option value="negro">Negro</option>
-                    <option value="amarillo">Amarillo</option>
+                    <option value="beige">Beige</option>
                 </select>
 
                 <label for="talla">Talla:</label>
@@ -52,32 +53,64 @@
                     <option value="l">L</option>
                 </select>
 
-                <!-- Campo de cantidad -->
                 <label for="cantidad">Cantidad:</label>
                 <input type="number" id="cantidad" value="1" min="1">
 
-                <!-- Botón para añadir al carrito -->
-                <button class="add-to-cart">Añadir al carrito</button>
+                <!-- Nueva opción para cargar una imagen personalizada -->
+                <label for="imagen-personalizada">Carga tu imagen personalizada:</label>
+                <input type="file" id="imagen-personalizada" accept="image/*" onchange="cargarImagen(event)">
+
+                <button class="add-to-cart" onclick="agregarAlCarrito()">Añadir al carrito</button>
             </div>
         </section>
 
         <section id="carrito" class="seccion" style="display: none;">
             <h2>Tu Carrito</h2>
             <div id="carrito-contenido">
-                <!-- Los productos añadidos aparecerán aquí -->
                 <p>Aquí aparecerán los productos que añadas.</p>
             </div>
         </section>
 
         <section id="contacto" class="seccion" style="display: none;">
             <h2>Contacto</h2>
-            <p>Puedes contactarnos a través del siguiente correo: danielon5445@gmail.com </p>
-            <p>Whatsapp: +57 3229042662</p>
+            <p>Puedes contactarnos a través del siguiente correo: contacto@customlook.com</p>
+        </section>
+
+        <!-- Sección de registro -->
+        <section id="registro" class="seccion" style="display: none;">
+            <h2>Registro</h2>
+            <p>Regístrate para recibir ofertas exclusivas y actualizaciones.</p>
+            <form id="form-registro">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" required>
+
+                <label for="correo">Correo:</label>
+                <input type="email" id="correo" required>
+
+                <label for="contraseña">Contraseña:</label>
+                <input type="password" id="contraseña" required>
+
+                <button type="submit">Registrarse</button>
+            </form>
+        </section>
+
+        <!-- Sección de inicio de sesión -->
+        <section id="login" class="seccion" style="display: none;">
+            <h2>Iniciar Sesión</h2>
+            <form id="form-login">
+                <label for="login-correo">Correo:</label>
+                <input type="email" id="login-correo" required>
+
+                <label for="login-contraseña">Contraseña:</label>
+                <input type="password" id="login-contraseña" required>
+
+                <button type="submit">Iniciar Sesión</button>
+            </form>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Custom Look S.A. Todos los derechos reservados.</p>
+        <p>&copy; 2024 Custom Look. Todos los derechos reservados.</p>
     </footer>
 
     <script src="app.js"></script>
